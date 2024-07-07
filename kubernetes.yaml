@@ -1,0 +1,41 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aigcd-dply
+  namespace: aigcd
+spec:
+  selector:
+    matchLabels:
+      app: aigcd-app
+      env: aigcd
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: aigcd-app
+        env: aigcd
+    spec:
+      containers:
+      - name: aigcd-app
+        image: us-west1-docker.pkg.dev/realestate-399101/airepo/aigcd:latest
+        ports:
+        - containerPort: 5000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: aigcd-server
+  namespace: aigcd
+  annotations:
+    cloud.google.com/neg: '{"exposed_ports": {"80":{"name": "aigcd-neg"}}}'
+spec:
+  selector:
+    app: aigcd-app
+    env: aigcd
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: ClusterIP
