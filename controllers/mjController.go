@@ -109,8 +109,6 @@ const (
 //channel_id: 1088383794702196829
 //application_id: 1088388251481554954
 
-// var DisCordToken string = "MTA3NzUxOTM0NzIyNTk4NTA0NA.GrSuJH.dC3qH4BlTM25F-tf4-XpwmBoy_cPjeF52osyzI"
-var DisCordToken string = "MTA3NzUxOTM0NzIyNTk4NTA0NA.GsHsfY.dyDyrqRhV5SiGL9_aSppQo-jHhKfGLDXbHgGkU"
 
 var session_id string
 
