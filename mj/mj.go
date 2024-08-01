@@ -21,7 +21,6 @@ import (
 func DiscordBot() {
 	log.Info("DiscordBot starting ...")
 	// Replace with your bot token
-	botToken := "MTA4ODM4ODI1MTQ4MTU1NDk1NA.GvKKWi.6j6ZRxf1UY2QWo2hjQ1odIDWwRum8B8UeEGgnk"
 
 	// Replace with the channel ID you want to listen to
 	channelID := "1088383794702196829"
